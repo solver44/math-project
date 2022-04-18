@@ -1,0 +1,37 @@
+{
+  "name": "Math",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "cross-env HOST=0.0.0.0 PORT=3000 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@vueuse/sound": "^1.1.7",
+    "animated-number-vue": "^1.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "core-js": "^3.20.3",
+    "katex": "^0.12.0",
+    "lottie-web-vue": "^1.2.1",
+    "nuxt": "^2.15.8",
+    "v-tooltip": "^2.1.3",
+    "vue": "^2.6.14",
+    "vue-katex": "^0.5.0",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "vue-toast-notification": "^0.6.2",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "node-sass": "^7.0.1",
+    "push-dir": "^0.4.1",
+    "sass": "^1.48.0",
+    "sass-loader": "^10.2.1"
+  }
+}

@@ -1,0 +1,321 @@
+:root {
+ --animation-speed: 1s;
+}
+
+// transition
+// fade
+.fade-enter-active,
+.fade-leave-active {
+ transition: opacity .3s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+ opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave {
+ opacity: 1;
+}
+
+.list-complete-item {
+ transition: all 1s;
+ display: inline-block;
+ margin-right: 0px;
+}
+
+.list-complete-enter,
+.list-complete-leave-to {
+ opacity: 0;
+ transform: translateY(30px);
+}
+
+.list-complete-leave-active {
+ position: absolute;
+}
+
+// slide down
+.slideDown-enter,
+.slideDown-leave-to {
+ transform: translateY(-100%);
+}
+
+.slideDown-enter-active,
+.slideDown-leave-active {
+ transition: transform .3s ease-out !important;
+}
+
+.slideDown-enter-to,
+.slideDown-leave {
+ transform: translateY(0%);
+}
+
+// slide up
+.slideUp-enter,
+.slideUp-leave-to {
+ transform: translateY(100%);
+}
+
+.slideUp-enter-active,
+.slideUp-leave-active {
+ transition: transform .3s ease-out !important;
+}
+
+.slideUp-enter-to,
+.slideUp-leave {
+ transform: translateY(0%);
+}
+
+// fade up
+.fadeUp-enter,
+.fadeUp-leave-to {
+ opacity: 0 !important;
+ transform: translateY(20%);
+}
+
+.fadeUp-enter-active,
+.fadeUp-leave-active {
+ transition: all 0.3s ease-out !important;
+}
+
+.fadeUp-enter-to,
+.fadeUp-leave {
+ transform: translateY(0%);
+ opacity: 1 !important;
+}
+
+
+/*
+==============================================
+pulse
+==============================================
+*/
+
+.pulse {
+ animation-name: pulse;
+ -webkit-animation-name: pulse;
+ animation-duration: 1s;
+ -webkit-animation-duration: 1s;
+ animation-iteration-count: infinite;
+ -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+ 0% {
+  transform: scale(0.9);
+  opacity: 0.7;
+ }
+ 50% {
+  transform: scale(1.1);
+  opacity: 1;
+ }
+ 100% {
+  transform: scale(0.9);
+  opacity: 0.7;
+ }
+}
+
+@-webkit-keyframes pulse {
+ 0% {
+  -webkit-transform: scale(0.9);
+  opacity: 0.7;
+ }
+ 50% {
+  -webkit-transform: scale(1.1);
+  opacity: 1;
+ }
+ 100% {
+  -webkit-transform: scale(0.9);
+  opacity: 0.7;
+ }
+}
+
+
+/*
+==============================================
+blob
+==============================================
+*/
+
+.blob-white {
+ box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+ animation: pulse-white 1s infinite;
+}
+
+@keyframes pulse-white {
+ 0% {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 0px var(--link-color-hover);
+ }
+ 70% {
+  transform: scale(1);
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+ }
+ 100% {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+ }
+}
+
+
+/*
+==============================================
+animation rotate-in-2-br-ccw
+==============================================
+*/
+
+.rotate-in-2-br-ccw {
+ -webkit-animation: rotate-in-2-br-ccw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+ animation: rotate-in-2-br-ccw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes rotate-in-2-br-ccw {
+ 0% {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  opacity: 0;
+ }
+ 100% {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  opacity: 1;
+ }
+}
+
+@keyframes rotate-in-2-br-ccw {
+ 0% {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  opacity: 0;
+ }
+ 100% {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  opacity: 1;
+ }
+}
+
+
+/*
+==============================================
+Fade in left Transition
+==============================================
+*/
+
+.fadeInLeft-enter-active,
+.fadeInLeft-leave-active {
+ transition: all .4s ease-in-out;
+}
+
+.fadeInLeft-enter,
+.fadeInLeft-leave-to {
+ opacity: 0;
+ transform: translateX(-15px);
+}
+
+.fadeInLeft-enter-to,
+.fadeInLeft-leave {
+ opacity: 1;
+ transform: translateX(0px);
+}
+
+
+/*
+==============================================
+Entrances
+==============================================
+*/
+
+.reverse-entrance {
+ animation-delay: 0ms !important;
+ animation-duration: var(--animation-speed);
+ animation-name: entranceFromTop !important;
+ animation-direction: reverse;
+ animation-fill-mode: forwards;
+}
+
+.entranceFromTop {
+ animation-duration: 2s;
+ animation-name: entranceFromTop;
+}
+
+@keyframes entranceFromTop {
+ from {
+  opacity: 0;
+  transform: translateY(-80px);
+ }
+ to {
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
+
+.entranceFromBottom {
+ animation-duration: var(--animation-speed);
+ animation-name: entranceFromBottom;
+ height: 0px;
+}
+
+@keyframes entranceFromBottom {
+ from {
+  opacity: 0;
+  transform: translateY(80px);
+  filter: blur(5px);
+  // height: 20px;
+ }
+ to {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+ }
+}
+
+.entranceFromLeft {
+ animation-name: entranceFromLeft;
+ animation-duration: 1s;
+}
+
+@keyframes entranceFromLeft {
+ from {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+ }
+ to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+ }
+}
+
+.entranceFromRight {
+ animation-name: entranceFromRight;
+ animation-duration: 1s;
+}
+
+@keyframes entranceFromRight {
+ from {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+ }
+ to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+ }
+}
+
+@keyframes blink-white {
+ 0% {
+  filter: brightness(.8);
+ }
+ 100% {
+  filter: brightness(1.1);
+ }
+}
